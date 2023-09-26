@@ -39,6 +39,7 @@ function startTimer() {
     Notiflix.Notify.success('Timer has stopped');
   }
 }
+
 startBtn.addEventListener('click', () => {
   timer = setInterval(() => {
     startTimer();
