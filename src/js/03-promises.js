@@ -19,6 +19,9 @@ function onClickCreatePromise(event) {
   event.preventDefault();
   const delayValue = Number(delayInput.value);
   const stepValue = Number(stepInput.value);
+
+  let currentDelay = delayValue;
+
   for (let i = 1; i <= amount.value; i += 1) {
     let delayTime = delayValue + stepValue * i;
     createPromise(i, delayTime)
@@ -28,6 +31,7 @@ function onClickCreatePromise(event) {
       .catch(({ position, delay }) => {
         Notiflix.Notify.failure(`Rejected promise ${position} in ${delay} ms`);
       });
+    currentDelay += stepValue;
   }
 }
 form.addEventListener('submit', onClickCreatePromise);
