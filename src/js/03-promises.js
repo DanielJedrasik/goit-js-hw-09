@@ -20,7 +20,7 @@ function onClickCreatePromise(event) {
   const delayValue = Number(delayInput.value);
   const stepValue = Number(stepInput.value);
 
-  for (let i = 0; i <= amount.value; i += 1) {
+  for (let i = 0; i < amount.value; i += 1) {
     let delayTime = delayValue + stepValue * i;
     createPromise(i + 1, delayTime)
       .then(({ position, delay }) => {
